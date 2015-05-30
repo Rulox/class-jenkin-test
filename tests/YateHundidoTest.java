@@ -14,7 +14,7 @@ public class YateHundidoTest {
 		
 		// Tocado por segunda vez y hundido
 		assertEquals(yate.tocado(), 2); // Tocado otra vez
-		assertEquals(yate.toques, 2);   // Además, tiene 2 toques
+		assertEquals(yate.toques, 2);   // Ademas, tiene 2 toques
 		
 		// Ya estaba hundido,
 		assertEquals(yate.tocado(), 2);

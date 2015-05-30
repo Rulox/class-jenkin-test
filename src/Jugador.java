@@ -1,7 +1,7 @@
 /**
- * Prueba de código en Java para integración continua con Jenkins.
- * Código original por "Sergio Blanco Cuaresma"
- * @author Raúl
+ * Prueba de cdigo en Java para integracin continua con Jenkins.
+ * Cdigo original por "Sergio Blanco Cuaresma"
+ * @author Ral
  * @author Sergio
  * @date Mayo de 2015
  */
@@ -60,8 +60,8 @@ public void colocar_barcos(Mundo mundo){
     }
   }
 
-  // Comprueba si hay barcos tocados o hundidos (los únicos que debemos poder ver) al rededor
-  // de una posición
+  // Comprueba si hay barcos tocados o hundidos (los nicos que debemos poder ver) al rededor
+  // de una posicin
   /**
  * @param fila
  * @param columna
@@ -89,9 +89,9 @@ private boolean barco_en_el_borde(int fila, int columna, Mundo mundo) {
  * @param mundo
  */
 public void disparar(Mundo mundo){
-    if (!proximo){    // Si el siguiente blanco correcto no esta proximo a la posición actual
+    if (!proximo){    // Si el siguiente blanco correcto no esta proximo a la posicin actual
       offset_columna = offset_fila = 0;
-      do{   // buscamos una posición buen para disparar
+      do{   // buscamos una posicin buen para disparar
         do{
           columna = (int)Math.round((Math.random()*10)%9);
           fila = (int)Math.round((Math.random()*10)%9);
@@ -108,7 +108,7 @@ public void disparar(Mundo mundo){
 
       if (result == 1){   // Tocado
         proximo=true;
-        direccion=(int)Math.round(((Math.random()*10)%5)+1);    // Empezamos a buscar en una dirección aleatoria (1-6)
+        direccion=(int)Math.round(((Math.random()*10)%5)+1);    // Empezamos a buscar en una direccin aleatoria (1-6)
       }
     }
     // Mientras tocado o disparemos a un sitio donde ya habiamos disparado o haya algun error
@@ -117,7 +117,7 @@ public void disparar(Mundo mundo){
         case 1:   // Hacia derecha
           offset_columna++;
           result=mundo.disparo(fila, columna+offset_columna);
-          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una dirección incorrecta
+          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una direccin incorrecta
             direccion = ((direccion)%6)+1;    // Siguiente direccion sin salirnos del rango (1-6)
             offset_columna = offset_fila = 0;
           }
@@ -126,7 +126,7 @@ public void disparar(Mundo mundo){
         case 2:   // Hacia izquierda
           offset_columna--;
           result=mundo.disparo(fila, columna+offset_columna);
-          if ((result == 4)  || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una dirección incorrecta
+          if ((result == 4)  || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una direccin incorrecta
             direccion = ((direccion)%6)+1;;   // Siguiente direccion sin salirnos del rango (1-6)
             offset_columna = offset_fila = 0;
           }
@@ -135,7 +135,7 @@ public void disparar(Mundo mundo){
         case 3:   // Hacia arriba
           offset_fila--;
           result=mundo.disparo(fila+offset_fila, columna);
-          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una dirección incorrecta
+          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una direccin incorrecta
             direccion = ((direccion)%6)+1;;   // Siguiente direccion sin salirnos del rango (1-6)
             offset_columna = offset_fila = 0;
           }
@@ -144,7 +144,7 @@ public void disparar(Mundo mundo){
         case 4:   // Hacia abajo
           offset_fila++;
           result=mundo.disparo(fila+offset_fila, columna);
-          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una dirección incorrecta
+          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una direccin incorrecta
             direccion = ((direccion)%6)+1;;   // Siguiente direccion sin salirnos del rango (1-6)
             offset_columna = offset_fila = 0;
           }
@@ -153,7 +153,7 @@ public void disparar(Mundo mundo){
           offset_fila--;
           offset_columna++;
           result=mundo.disparo(fila+offset_fila, columna+offset_columna);
-          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una dirección incorrecta
+          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una direccin incorrecta
             direccion = ((direccion)%6)+1;;   // Siguiente direccion sin salirnos del rango (1-6)
             offset_columna = offset_fila = 0;
           }
@@ -163,7 +163,7 @@ public void disparar(Mundo mundo){
           offset_fila++;
           offset_columna--;
           result=mundo.disparo(fila+offset_fila, columna+offset_columna);
-          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una dirección incorrecta
+          if ((result == 4) || (result == 3)){    // Si ya hemos disparado en ese lugar, estamos en una direccin incorrecta
             direccion = ((direccion)%6)+1;;   // Siguiente direccion sin salirnos del rango (1-6)
             offset_columna = offset_fila = 0;
           }

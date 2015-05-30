@@ -1,7 +1,7 @@
 /**
- * Prueba de código en Java para integración continua con Jenkins.
- * Código original por "Sergio Blanco Cuaresma"
- * @author Raúl
+ * Prueba de cdigo en Java para integracin continua con Jenkins.
+ * Cdigo original por "Sergio Blanco Cuaresma"
+ * @author Ral
  * @author Sergio
  * @date Mayo de 2015
  */

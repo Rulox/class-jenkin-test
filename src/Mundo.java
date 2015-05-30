@@ -1,7 +1,7 @@
 /**
- * Prueba de código en Java para integración continua con Jenkins.
- * Código original por "Sergio Blanco Cuaresma"
- * @author Raúl
+ * Prueba de cdigo en Java para integracin continua con Jenkins.
+ * Cdigo original por "Sergio Blanco Cuaresma"
+ * @author Ral
  * @author Sergio
  * @date Mayo de 2015
  */
@@ -323,7 +323,7 @@ public int colocar_submarino3(int fila, int columna) {
 
   // En la tabla de booleanos disparado se guarda el disparo para que no se vuelva
   // a repetir, y lanzamos el metodo tocado() del barco correspondiente si existe
-  // alguno en esa posición, esta nos retorna un valor segun si esta tocado(1)
+  // alguno en esa posicin, esta nos retorna un valor segun si esta tocado(1)
   // o hundido(2)
   /**
  * @param fila
