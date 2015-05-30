@@ -7,7 +7,10 @@
  */
 
 public class Submarino extends Barco {
-  public int tocado (){
+  /**
+ * @see Barco#tocado()
+ */
+public int tocado (){
     if (toques<2){
       toques++;
       hundido=true;
