@@ -1,16 +1,25 @@
-/* Hundir.java
- * Autor: Sergio Blanco Cuaresma
- * Fecha: Enero del 2002
- * Descripción: Fichero principal del juego "Hundir la flota", interacciona
- * con el usuario pidiendo que situe sus barcos, seguidamente se empieza la
- * batalla entre el ordenador y el usuario.
+/**
+ * Prueba de código en Java para integración continua con Jenkins.
+ * Código original por "Sergio Blanco Cuaresma"
+ * @author Raúl
+ * @author Sergio
+ * @date Mayo de 2015
  */
+
 import java.io.*;
 
+/**
+ * @author Rulox
+ *
+ */
 public class Hundir {
 
   // Visualiza nuestro mundo y el del contricante
-  public static void visualizar(Mundo nuestro_mundo, Mundo su_mundo){
+  /**
+ * @param nuestro_mundo
+ * @param su_mundo
+ */
+public static void visualizar(Mundo nuestro_mundo, Mundo su_mundo){
     int result;
     System.out.println("  0123456789        0123456789");
     System.out.println(" ------------      ------------");
@@ -96,7 +105,11 @@ public class Hundir {
 
   // Solicita una posición y la devuelve en un array donde el primero numero
   // es la fila y el segundo la columna
-  private static int[] pedir_posicion() throws IOException {
+  /**
+ * @return
+ * @throws IOException
+ */
+private static int[] pedir_posicion() throws IOException {
     int[] pos = {0, 0};
     BufferedReader in =new BufferedReader(new InputStreamReader(System.in));
     String s;
@@ -115,7 +128,11 @@ public class Hundir {
   }
 
   // Solicita una direccion (1, 2, 3) y la devuelve.
-  private static int pedir_direccion() throws IOException {
+  /**
+ * @return
+ * @throws IOException
+ */
+private static int pedir_direccion() throws IOException {
     int direccion;
     BufferedReader in =new BufferedReader(new InputStreamReader(System.in));
     String s;
@@ -133,7 +150,11 @@ public class Hundir {
   }
 
  
-  public static void main (String[] arg) throws IOException {
+  /**
+ * @param arg
+ * @throws IOException
+ */
+public static void main (String[] arg) throws IOException {
     Mundo mundo_com = new Mundo();
     Mundo mundo_human = new Mundo();   // Mundo del jugador humano
     Jugador computer = new Jugador();

@@ -1,9 +1,9 @@
-/* Mundo.java
- * Autor: Sergio Blanco Cuaresma
- * Fecha: Enero del 2002
- * Descripción: Mundo que contiene el tablero con 1 Transatlantico
- * 2 Yates y 3 Submarinos, se pueden realizar disparos, comprobar
- * el estado y ver si estan todos hundidos.
+/**
+ * Prueba de código en Java para integración continua con Jenkins.
+ * Código original por "Sergio Blanco Cuaresma"
+ * @author Raúl
+ * @author Sergio
+ * @date Mayo de 2015
  */
 
 
@@ -16,7 +16,10 @@ public class Mundo {
   Submarino submarino1, submarino2, submarino3;
   private int num_aciertos;
 
-  Mundo (){     // Constructor: inicializamos variables
+  /**
+ * Constructor
+ */
+Mundo (){     // Constructor: inicializamos variables
     tablero = new Barco[10][10];
     libre = new boolean[10][10];
     // Inicializamos todos a true ya que por defecto los pone a false
@@ -35,7 +38,13 @@ public class Mundo {
   // No es necesario crear funciones especificas para cada transatlantico como los yates
   // o submarinos pq solo hay 1
   /* Direccion = 1 -> Horizontal || = 2 -> Vertical || = 3 Diagonal */
-  public int colocar_trans(int fila, int columna, int direccion ) {
+  /**
+ * @param fila
+ * @param columna
+ * @param direccion
+ * @return
+ */
+public int colocar_trans(int fila, int columna, int direccion ) {
     switch (direccion) {
       case 1:   // Horizontal
         // Nos aseguramos que no se salga del tablero
@@ -135,7 +144,14 @@ public class Mundo {
   }
 
 
-  public int colocar_yate(int fila, int columna, int direccion, Yate yate ) {
+  /**
+ * @param fila
+ * @param columna
+ * @param direccion
+ * @param yate
+ * @return
+ */
+public int colocar_yate(int fila, int columna, int direccion, Yate yate ) {
     switch (direccion) {
       case 1:   // Horitzontal
         // Nos aseguramos que no se salga del tablero
@@ -230,15 +246,33 @@ public class Mundo {
   } 
 
   // Funciones especificas para colocar cada uno de los yates disponibles
-  public int colocar_yate1(int fila, int columna, int direccion){
+  /**
+ * @param fila
+ * @param columna
+ * @param direccion
+ * @return
+ */
+public int colocar_yate1(int fila, int columna, int direccion){
     return colocar_yate(fila, columna, direccion, yate1);
   }
-  public int colocar_yate2(int fila, int columna, int direccion){
+  /**
+ * @param fila
+ * @param columna
+ * @param direccion
+ * @return
+ */
+public int colocar_yate2(int fila, int columna, int direccion){
     return colocar_yate(fila, columna, direccion, yate2);
   }
 
 
-  public int colocar_submarino(int fila, int columna, Submarino submarino) {
+  /**
+ * @param fila
+ * @param columna
+ * @param submarino
+ * @return
+ */
+public int colocar_submarino(int fila, int columna, Submarino submarino) {
     // Nos aseguramos que no se salga del tablero
     if ((columna > 9) || (columna<0) || (fila > 9) || (fila < 0)){
       return 1;
@@ -262,13 +296,28 @@ public class Mundo {
   }
 
   // Funciones especificas para colocar cada uno de los submarinos disponibles
-  public int colocar_submarino1(int fila, int columna) {
+  /**
+ * @param fila
+ * @param columna
+ * @return
+ */
+public int colocar_submarino1(int fila, int columna) {
     return colocar_submarino(fila, columna, submarino1);
   }
-  public int colocar_submarino2(int fila, int columna) {
+  /**
+ * @param fila
+ * @param columna
+ * @return
+ */
+public int colocar_submarino2(int fila, int columna) {
     return colocar_submarino(fila, columna, submarino2);
   }
-  public int colocar_submarino3(int fila, int columna) {
+  /**
+ * @param fila
+ * @param columna
+ * @return
+ */
+public int colocar_submarino3(int fila, int columna) {
     return colocar_submarino(fila, columna, submarino3);
   }
 
@@ -276,7 +325,12 @@ public class Mundo {
   // a repetir, y lanzamos el metodo tocado() del barco correspondiente si existe
   // alguno en esa posición, esta nos retorna un valor segun si esta tocado(1)
   // o hundido(2)
-  public int disparo (int fila, int columna) {
+  /**
+ * @param fila
+ * @param columna
+ * @return
+ */
+public int disparo (int fila, int columna) {
     if ((columna<0) || (columna>9) || (fila<0) || (fila>9)){
       return 3;   // Error, fuera de la tabla
     }
@@ -294,7 +348,10 @@ public class Mundo {
   }
 
   // Devuelve true si todos los barcos han sido hundidos
-  public boolean todos_hundidos(){
+  /**
+ * @return
+ */
+public boolean todos_hundidos(){
     if (num_aciertos == 10){    // Nos basamos en el numero de blancos realizados
                                 // Para hundir todos los barcos se ha de hacer blanco en todas las casillas
       return true;              // que contienen un barco: 1x3 + 2x2 + 3x1 = 10
@@ -303,7 +360,12 @@ public class Mundo {
     }
   }
 
-  public int estado (int fila, int columna) {
+  /**
+ * @param fila
+ * @param columna
+ * @return
+ */
+public int estado (int fila, int columna) {
     if ((columna<0) || (columna>9) || (fila<0) || (columna>9)){
       return 3;   // Error, fuera de la tabla
     }

@@ -1,8 +1,9 @@
-/* Jugador.java
- * Autor: Sergio Blanco Cuaresma
- * Fecha: Enero del 2002
- * Descripción: Jugador al que se le puede solicitar que coloque sus
- * barcos en un mundo (tablero), y que realice disparos de forma inteligente.
+/**
+ * Prueba de código en Java para integración continua con Jenkins.
+ * Código original por "Sergio Blanco Cuaresma"
+ * @author Raúl
+ * @author Sergio
+ * @date Mayo de 2015
  */
 
 
@@ -17,7 +18,10 @@ public class Jugador {
 
 
   // Colocamos todos los barcos de forma correcta
-  public void colocar_barcos(Mundo mundo){
+  /**
+ * @param mundo
+ */
+public void colocar_barcos(Mundo mundo){
     int columna = (int)Math.round((Math.random()*10)%9);
     int fila = (int)Math.round((Math.random()*10)%9);
     int direccion = (int)Math.round( ((Math.random()*10)%2)+1 );
@@ -58,7 +62,13 @@ public class Jugador {
 
   // Comprueba si hay barcos tocados o hundidos (los únicos que debemos poder ver) al rededor
   // de una posición
-  private boolean barco_en_el_borde(int fila, int columna, Mundo mundo) {
+  /**
+ * @param fila
+ * @param columna
+ * @param mundo
+ * @return
+ */
+private boolean barco_en_el_borde(int fila, int columna, Mundo mundo) {
     for (offset_columna=-1; offset_columna <2; offset_columna++){
       for (offset_fila=-1; offset_fila <2; offset_fila++){
         // Comprobamos que no excedemos el rango
@@ -75,7 +85,10 @@ public class Jugador {
 
   // Realiza un disparo inteligente, si hace blanco busca por esa zona el resto del barco y no realiza
   // tiros justo al lado de un barco hundido ya que al lado no esta permitido colocar otros barcos.
-  public void disparar(Mundo mundo){
+  /**
+ * @param mundo
+ */
+public void disparar(Mundo mundo){
     if (!proximo){    // Si el siguiente blanco correcto no esta proximo a la posición actual
       offset_columna = offset_fila = 0;
       do{   // buscamos una posición buen para disparar

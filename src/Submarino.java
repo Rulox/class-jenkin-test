@@ -1,6 +1,9 @@
-/* Submarino.java
- * Autor: Sergio Blanco Cuaresma
- * Fecha: Enero del 2002
+/**
+ * Prueba de código en Java para integración continua con Jenkins.
+ * Código original por "Sergio Blanco Cuaresma"
+ * @author Raúl
+ * @author Sergio
+ * @date Mayo de 2015
  */
 
 public class Submarino extends Barco {
